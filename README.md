@@ -30,12 +30,13 @@ lastmod: 2024-07-08T09:02:07.577Z
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.   
 Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.   
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Configuration
-Repository Setup
-To store the markdown files, the bot requires access to a Git repository. You'll need to provide a personal access token with write permissions for the specific repository where the files will be stored.
-
 ```
 
+## Configuration
+
+### Repository Setup   
+To store the markdown files, the bot requires access to a Git repository.    
+You'll need to provide a personal access token with write permissions for the specific repository where the files will be stored.
 
 Example Configuration `config.json`
 ```json
