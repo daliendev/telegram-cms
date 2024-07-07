@@ -4,41 +4,16 @@ Markdown CMS for Telegram is a project aimed at creating a simple and intuitive 
 ## Features
 - Manage blog posts via Telegram.
 - Customizable fields based on user requirements.
-- Simple configuration for field management.
 - Automatic markdown file generation.
 - Stores markdown files in a specified Git repository.
-- Example Blog Post Structure
-- Below is an example of a blog post structure that the bot will help manage. Users can specify which fields they want to manage through the bot.    
      
------     
-
-Example Generated Markdown File
-```md
----
-title: Lorem Ipsum
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-date: 2024-07-07T14:30:31.539Z
-preview: /lorem-ipsum-banner.png
-alt: Lorem ipsum banner
-draft: ""
-tags: ""
-categories: ""
-slug: lorem-ipsum-dolor
-lastmod: 2024-07-08T09:02:07.577Z
----
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.   
-Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.   
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-```
-
 ## Configuration
 
 ### Repository Setup   
 To store the markdown files, the bot requires access to a Git repository.    
 You'll need to provide a personal access token with write permissions for the specific repository where the files will be stored.
 
-Example Configuration `config.json`
+Example `config.json`
 ```json
 {
   "repository": {
@@ -55,28 +30,12 @@ Example Configuration `config.json`
       "alias": "Description",
       "required": false
     },
-    "date": {
-      "alias": "Date",
-      "required": true
-    },
-    "preview": {
-      "alias": "Preview Image",
-      "required": false
-    },
-    "alt": {
-      "alias": "Alternative Text",
-      "required": false
-    },
     "draft": {
       "alias": "Draft",
       "required": false
     },
     "tags": {
       "alias": "Tags",
-      "required": false
-    },
-    "categories": {
-      "alias": "Categories",
       "required": false
     },
     "slug": {
@@ -102,7 +61,8 @@ GITHUB_TOKEN=your-github-token
 ```
 
 ## Field Management
-Users can configure which fields they want the bot to manage. Each field can have an alias, which is useful for localization or simply making the field names more intuitive.
+Users can configure which fields they want the bot to manage.    
+Each field can have an alias, which is useful for localization or simply making the field names more intuitive.
 
 ## Bot Commands
 `/start`   
@@ -129,8 +89,6 @@ Bot: Please enter the Titre (title):
 User: Lorem Ipsum
 Bot: Please enter the Description (description):
 User: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Bot: Please enter the Alternative Text (alt):
-User: Lorem ipsum banner
 Bot: Please enter the Slug (slug):
 User: lorem-ipsum-dolor
 Bot: Please enter the Content (content):
@@ -138,7 +96,6 @@ User: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod te
 Bot: Here is the information you have entered:
 - Title: Lorem Ipsum
 - Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-- Alternative Text: Lorem ipsum banner
 - Slug: lorem-ipsum-dolor
 - Content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 Bot: Do you want to publish this post? (yes/no)
@@ -146,6 +103,19 @@ User: yes
 Bot: Your post has been published successfully.
 ```
 The bot then generates the markdown file with the provided information and commits it to the specified repository and folder path.
+
+Generated markdown file based on the example interaction:
+```md
+---
+title: Lorem Ipsum
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+draft: ""
+tags: ""
+slug: lorem-ipsum-dolor
+---
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+```
 
 ## Conclusion
 Markdown CMS for Telegram provides a straightforward way to manage blog content using Telegram. By customizing the fields and their aliases, users can tailor the bot to their specific needs, ensuring a seamless content creation experience. Additionally, the integration with Git repositories ensures that content is stored securely and version-controlled.
