@@ -1,0 +1,49 @@
+{
+    "repository": {
+      "url": "https://github.com/your-username/your-repo",
+      "branch": "main",
+      "folder": "path/to/your/folder"
+    },
+    "fields": {
+      "title": {
+        "alias": "Title",
+        "required": true
+      },
+      "description": {
+        "alias": "Description",
+        "required": false
+      },
+      "date": {
+        "alias": "Date",
+        "required": true
+      },
+      "preview": {
+        "alias": "Preview Image",
+        "required": false
+      },
+      "alt": {
+        "alias": "Alternative Text",
+        "required": false
+      },
+      "draft": {
+        "alias": "Draft",
+        "required": false
+      },
+      "tags": {
+        "alias": "Tags",
+        "required": false
+      },
+      "categories": {
+        "alias": "Categories",
+        "required": false
+      },
+      "slug": {
+        "alias": "Slug",
+        "required": true
+      },
+      "content": {
+        "alias": "Content",
+        "required": true
+      }
+    }
+  }
