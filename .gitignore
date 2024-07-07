@@ -1,2 +1,11 @@
+# Secrets
 .env
+
+# Project-specific configuration
 config.json
+
+# Virtual environments
+venv/
+
+# Pipenv files
+Pipfile.lock
