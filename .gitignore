@@ -9,3 +9,6 @@ venv/
 
 # Pipenv files
 Pipfile.lock
+
+# Test cache
+.pytest_cache/
