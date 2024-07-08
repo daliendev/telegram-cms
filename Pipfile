@@ -8,6 +8,7 @@ fastapi = "*"
 uvicorn = "*"
 python-dotenv = "*"
 pygithub = "*"
+pytelegrambotapi = "*"
 
 [dev-packages]
 pytest = "*"

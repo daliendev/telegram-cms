@@ -14,6 +14,7 @@ def load_config():
 
 # Get GitHub token from environment variables
 GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
+TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 
 # Load configuration from config.json
 config = load_config()
@@ -30,3 +31,5 @@ REPO_FOLDER = config['repository']['folder']
 
 # Define FILE_PATH based on repository folder
 FILE_PATH = REPO_FOLDER + '/'  # Ensure trailing slash for folder path
+
+ALLOWED_TELEGRAM_USERNAMES = config['telegram']['allowed_usernames']
