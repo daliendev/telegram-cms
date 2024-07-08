@@ -21,6 +21,9 @@ Example `config.json`
     "branch": "main",
     "folder": "path/to/your/folder"
   },
+  "telegram": {
+    "allowed_usernames": []
+  },
   "fields": {
     "title": {
       "alias": "Title",
