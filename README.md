@@ -1,5 +1,5 @@
 ## Project Overview
-Markdown CMS for Telegram is a project aimed at creating a simple and intuitive content management system that leverages a chatbot as the user interface. Users can manage their blog content directly from Telegram, making it accessible and easy to use. This CMS is ideal for projects using platforms with data entries stored in markdown files like in Netlify CMS or Nuxt Content.
+Markdown CMS for Telegram enables users to manage their blog or website content directly from a Telegram bot. It is designed specifically for blogs where content is stored in markdown files within a Git repository. Users can create, update, and manage their markdown files seamlessly through a Telegram chat interface.
 
 ## Features
 - Manage blog posts via Telegram.
