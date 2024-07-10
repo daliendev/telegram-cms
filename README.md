@@ -1,3 +1,5 @@
+🚧 WORK IN PROGRESS (on branch https://github.com/daliendev/telegram-cms/tree/telegram-bot if you want to beta test it). 🚧     
+
 ## Project Overview
 Markdown CMS for Telegram enables users to manage their blog or website content directly from a Telegram bot. It is designed specifically for blogs where content is stored in markdown files within a Git repository. Users can create, update, and manage their markdown files seamlessly through a Telegram chat interface.
 
