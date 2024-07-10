@@ -20,3 +20,12 @@ def create_or_update_file(file_path, content, commit_message = 'Default Commit M
             return f"File '{file_path}' created successfully."
     except Exception as e:
         return f"Error creating or updating file: {e}"
+
+def list_files(file_path):
+    try:
+        repo = github_client.get_repo(f'{REPO_OWNER}/{REPO_NAME}')
+        contents = repo.get_contents(file_path)
+        files = [content.path for content in contents if content.type == 'file']
+        return files
+    except Exception as e:
+        return f"Error listing files: {e}"
