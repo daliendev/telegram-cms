@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
-from .config import FILE_PATH
 from app.telegram_bot import start_bot
 
 @asynccontextmanager

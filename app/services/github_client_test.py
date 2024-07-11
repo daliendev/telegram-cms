@@ -1,8 +1,8 @@
 from fastapi.testclient import TestClient
 import pytest
-from .main import app
+from ..main import app
 from .github_client import list_files
-from .config import REPO_CONTENT_FOLDER
+from ..config import REPO_CONTENT_FOLDER
 
 client = TestClient(app)
 

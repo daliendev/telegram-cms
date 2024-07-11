@@ -1,5 +1,5 @@
 from deep_translator import GoogleTranslator
-from .config import config
+from ..config import config
 
 def translate(sentence):
     target = config['language']

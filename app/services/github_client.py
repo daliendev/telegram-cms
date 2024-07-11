@@ -1,5 +1,5 @@
 from github import Github, Auth
-from .config import GITHUB_TOKEN, REPO_NAME, REPO_OWNER
+from ..config import GITHUB_TOKEN, REPO_NAME, REPO_OWNER
 
 # Initialize GitHub client
 github_client = Github(auth=Auth.Token(GITHUB_TOKEN))
