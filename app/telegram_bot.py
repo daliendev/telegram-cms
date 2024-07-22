@@ -6,7 +6,7 @@ from .handlers.handle_post_create import register_post_create_handler
 @bot.message_handler(commands=['start'])
 @telegram_authorized_only
 def send_welcome(message):
-    bot.reply_to(message, translate("Welcome to the Markdown CMS bot! Use /create to create a new entry or /list to list all entries."))
+    bot.reply_to(message, translate("Welcome to the Markdown CMS bot! Use /create to create a new entry or /update + URL or /delete + URL to manage existent ones."))
 
 @bot.message_handler(func=lambda message: True)
 @telegram_authorized_only

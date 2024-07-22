@@ -16,6 +16,8 @@ You'll need to provide a personal access token with write permissions for the sp
 Example `config.json`
 ```json
 {
+  "language": "en",
+  "website_url": "https://example.com/",
   "repository": {
     "url": "https://github.com/your-username/your-repo",
     "branch": "main",
