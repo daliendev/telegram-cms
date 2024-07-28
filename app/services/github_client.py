@@ -21,6 +21,17 @@ def create_or_update_file(file_path, content, commit_message = 'Default Commit M
     except Exception as e:
         return f"Error creating or updating file: {e}"
 
+def delete_file(file_path, commit_message='Delete file'):
+    try:
+        repo = github_client.get_repo(f'{REPO_OWNER}/{REPO_NAME}')
+        # Check if the file exists
+        contents = repo.get_contents(file_path)
+        # Delete the file
+        repo.delete_file(contents.path, commit_message, contents.sha)
+        return f"File '{file_path}' deleted successfully."
+    except Exception as e:
+        return f"Error deleting file: {e}"
+
 def list_files(file_path):
     try:
         repo = github_client.get_repo(f'{REPO_OWNER}/{REPO_NAME}')
