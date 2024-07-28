@@ -2,6 +2,7 @@ from app.bot_instance import bot
 from .utils import telegram_authorized_only
 from .services.translator import translate
 from .handlers.handle_post_create import register_post_create_handler
+from .handlers.handle_post_update import register_post_update_handler
 
 @bot.message_handler(commands=['start'])
 @telegram_authorized_only
@@ -15,6 +16,7 @@ def handle_default(message):
 
 def start_bot():
     register_post_create_handler(bot)
+    register_post_update_handler(bot)    
     bot.polling()
 
 if __name__ == '__main__':

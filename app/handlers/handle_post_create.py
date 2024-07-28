@@ -8,12 +8,7 @@ from app.utils import telegram_authorized_only
 from app.services.translator import translate
 from app.services.github_client import create_or_update_file
 from app.config import TELEGRAM_TOKEN, FILE_PATH, config
-
-# In-memory store for temporary message data
-user_data = {
-    "first_text": False,
-}
-current_step = {}
+from app.temp_memory import user_data, current_step
 
 @bot.message_handler(commands=['create'])
 @telegram_authorized_only
@@ -61,7 +56,7 @@ def process_text_step(message, field):
 
     if user_data['first_text'] == False:
         user_data['first_text'] = True
-        slug = f"{message.text.lower().replace(' ', '-')}-{uuid.uuid4()}"
+        slug = f"{message.text.lower().replace(' ', '-')}"
         user_data[chat_id]['slug'] = slug
 
     current_step[chat_id] += 1
@@ -198,11 +193,11 @@ def confirm_post(message):
                 file_path=f"{FILE_PATH}{slug}.md",
                 content=content,
             )
-            bot.reply_to(message, f"{translate("New post created successfully!")}")
+            bot.reply_to(message, f"{translate("Action completed successfully!")}")
             del user_data[chat_id]
             del current_step[chat_id]
         except Exception as e:
-            bot.reply_to(message, f"{translate("Failed to create new post:")} {e}")
+            bot.reply_to(message, f"{translate("Failed to complete the action:")} {e}")
     else:
         bot.reply_to(message, translate('No post to confirm. Please use /create to start creating a new post.'))
 
