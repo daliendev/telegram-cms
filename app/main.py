@@ -9,4 +9,6 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
-# Run with uvicorn app.main:app --reload
+@app.get("/")
+async def hello_fly():
+    return 'telegram-cms: https://github.com/daliendev/telegram-cms'
