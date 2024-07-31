@@ -7,7 +7,7 @@ from app.bot_instance import bot
 from app.utils import telegram_authorized_only
 from app.services.translator import translate
 from app.services.github_client import create_or_update_file
-from app.config import TELEGRAM_TOKEN, FILE_PATH, config
+from app.config import TELEGRAM_TOKEN, FILE_PATH, config, WEBSITE_URL
 from app.temp_memory import user_data, current_step
 
 @bot.message_handler(commands=['create'])
@@ -97,7 +97,7 @@ def process_array_string_step(message, field):
     user_data[chat_id][field].append(message.text)
     markup = telebot.types.ReplyKeyboardMarkup(one_time_keyboard=True)
     markup.add(f"✅", f"⛔")
-    msg = bot.reply_to(message, translate("Add another?"), reply_markup=markup)
+    msg = bot.reply_to(message, translate("Add another? ✅ for yes, ⛔ for no"), reply_markup=markup)
     bot.register_next_step_handler(msg, add_more_strings_step, field)
 
 def add_more_strings_step(message, field):
@@ -125,7 +125,7 @@ def process_object_field_step(message, field, obj_field):
     if obj_field == list(obj_fields.keys())[-1]:
         markup = telebot.types.ReplyKeyboardMarkup(one_time_keyboard=True)
         markup.add(f"✅", f"⛔")
-        msg = bot.reply_to(message, translate("Add another entry?"), reply_markup=markup)
+        msg = bot.reply_to(message, translate("Add another entry? ✅ for yes, ⛔ for no"), reply_markup=markup)
         bot.register_next_step_handler(msg, add_more_objects_step, field)
     else:
         next_obj_field = list(obj_fields.keys())[list(obj_fields.keys()).index(obj_field) + 1]
@@ -157,7 +157,7 @@ def process_date_step(message, field):
         process_next_step(message)    
 
     except ValueError:
-        msg = bot.reply_to(message, translate("Invalid date format. Please use YYYY-MM-DD HH:MM:SS."))
+        msg = bot.reply_to(message, translate("Invalid date format. Please use YYYY-MM-DD HH:MM:SS.like 2024-01-01 00:00:00"))
         bot.register_next_step_handler(msg, process_date_step, field)
     except Exception as e:
         msg = bot.reply_to(message, f"{translate("Error setting date")}: {str(e)}")
@@ -193,7 +193,8 @@ def confirm_post(message):
                 file_path=f"{FILE_PATH}{slug}.md",
                 content=content,
             )
-            bot.reply_to(message, f"{translate("Action completed successfully!")}")
+            success_message = f"Action completed successfully! Changes are available here: {WEBSITE_URL}{slug} :)"
+            bot.reply_to(message, f"{translate(success_message)}")
             del user_data[chat_id]
             del current_step[chat_id]
         except Exception as e:

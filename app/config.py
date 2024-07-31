@@ -33,3 +33,5 @@ REPO_CONTENT_FOLDER = config['repository']['content_folder']
 FILE_PATH = REPO_CONTENT_FOLDER + '/' # Ensure trailing slash for folder path
 
 ALLOWED_TELEGRAM_USERNAMES = config['telegram']['allowed_usernames']
+
+WEBSITE_URL = config['website_url']
