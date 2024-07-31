@@ -1,49 +1,74 @@
 {
-    "repository": {
-      "url": "https://github.com/your-username/your-repo",
-      "branch": "main",
-      "folder": "path/to/your/folder"
+  "language": "en",
+  "website_url": "https://example.com/",
+  "repository": {
+    "url": "https://github.com/your-username/your-repo",
+    "branch": "main",
+    "folder": "path/to/your/folder"
+  },
+  "telegram": {
+    "allowed_usernames": []
+  },
+  "fields": {
+    "title": {
+      "label": "Title",
+      "type": "text",
+      "required": true
     },
-    "fields": {
-      "title": {
-        "alias": "Title",
-        "required": true
-      },
-      "description": {
-        "alias": "Description",
-        "required": false
-      },
-      "date": {
-        "alias": "Date",
-        "required": true
-      },
-      "preview": {
-        "alias": "Preview Image",
-        "required": false
-      },
-      "alt": {
-        "alias": "Alternative Text",
-        "required": false
-      },
-      "draft": {
-        "alias": "Draft",
-        "required": false
-      },
-      "tags": {
-        "alias": "Tags",
-        "required": false
-      },
-      "categories": {
-        "alias": "Categories",
-        "required": false
-      },
-      "slug": {
-        "alias": "Slug",
-        "required": true
-      },
-      "content": {
-        "alias": "Content",
-        "required": true
+    "description": {
+      "label": "Description",
+      "type": "text",
+      "required": false
+    },
+    "date": {
+      "label": "Date",
+      "type": "datetime",
+      "required": true
+    },
+    "banner": {
+      "label": "Preview Banner",
+      "type": "file",
+      "folder": "public/img",
+      "required": true
+    },
+    "draft": {
+      "label": "Draft",
+      "type": "boolean",
+      "required": false
+    },
+    "alt": {
+      "label": "Alternative Text",
+      "type": "text",
+      "required": false
+    },
+    "tags": {
+      "label": "Tags",
+      "type": "array_string",
+      "required": true
+    },
+    "categories": {
+      "label": "Categories",
+      "type": "array_string",
+      "required": false
+    },
+    "links": {
+      "label": "URLs",
+      "type": "array_object",
+      "required": false,
+      "object_fields": {
+        "label": {
+          "label": "Label",
+          "required": true
+        },
+        "url": {
+          "label": "URL",
+          "required": true
+        }
       }
+    },
+    "content": {
+      "label": "Content",
+      "required": true
     }
   }
+}

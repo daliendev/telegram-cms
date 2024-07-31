@@ -8,6 +8,8 @@ fastapi = "*"
 uvicorn = "*"
 python-dotenv = "*"
 pygithub = "*"
+pytelegrambotapi = "*"
+deep-translator = "*"
 
 [dev-packages]
 pytest = "*"

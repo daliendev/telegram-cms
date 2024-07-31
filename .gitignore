@@ -12,3 +12,6 @@ Pipfile.lock
 
 # Test cache
 .pytest_cache/
+
+# Translation Storage file
+translations.yaml
