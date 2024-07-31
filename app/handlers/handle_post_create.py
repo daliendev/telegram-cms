@@ -82,7 +82,7 @@ def process_file_step(message, field):
         field_info = config['fields'][field]
         create_or_update_file(file_path=f"{field_info['folder']}/{filename}", content=file.content)
         
-        user_data[chat_id][field] = f"{field_info['folder'].replace('public/', '')}/{filename}"
+        user_data[chat_id][field] = f"{field_info['folder'].replace('public/', '/')}/{filename}"
         if os.path.exists(filename):
             os.remove(filename)
 
