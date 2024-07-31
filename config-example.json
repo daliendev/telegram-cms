@@ -1,5 +1,6 @@
 {
   "language": "en",
+  "website_url": "https://example.com/",
   "repository": {
     "url": "https://github.com/your-username/your-repo",
     "branch": "main",
