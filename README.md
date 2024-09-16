@@ -73,23 +73,20 @@ Each field can have an alias, which is useful for localization or simply making 
 `/start`   
 Initializes the bot and displays a welcome message along with the available commands.
 
-`/newpost`    
+`/create`    
 Starts the process of creating a new blog post. The bot will prompt the user for each configured field.
 
-`/editpost [slug]`    
+`/update`    
 Allows the user to edit an existing blog post. The bot will fetch the post based on the provided slug and prompt the user for each configured field.
 
-`/deletepost [slug]`    
-Deletes the specified blog post.
-
-`/listposts`      
-Displays a list of all blog posts with their titles and slugs.
+`/delete`    
+Deletes the specified blog post (bot will ask the URL/slug of the post to delete).
 
 ## Example Interaction
 User starts creating a new post:
 
 ```
-User: /newpost
+User: /create
 Bot: Please enter the Titre (title):
 User: Lorem Ipsum
 Bot: Please enter the Description (description):
@@ -98,11 +95,6 @@ Bot: Please enter the Slug (slug):
 User: lorem-ipsum-dolor
 Bot: Please enter the Content (content):
 User: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Bot: Here is the information you have entered:
-- Title: Lorem Ipsum
-- Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-- Slug: lorem-ipsum-dolor
-- Content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 Bot: Do you want to publish this post? (yes/no)
 User: yes
 Bot: Your post has been published successfully.
